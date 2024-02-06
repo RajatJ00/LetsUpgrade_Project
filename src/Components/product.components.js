@@ -28,13 +28,13 @@ function Product(props) {
                 <p>₹ {props.price}</p>
                 <div className="btn_div">
                     <div>
-                        <button className='btn' onClick={(event) => { minusData(event) }}>-
+                        <button className='btn' onClick={() => { minusData() }}>-
                         </button>
                         <a>{a}</a>
-                        <button className='btn' onClick={(event) => { plusData(event) }}>+
+                        <button className='btn' onClick={() => { plusData() }}>+
                         </button>
                     </div>
-                    <button className='btn' onClick={(event) => { Buy_btn(event) }}>Buy
+                    <button className='btn' onClick={() => { Buy_btn() }}>Buy
                     </button>
                 </div>
             </div>
