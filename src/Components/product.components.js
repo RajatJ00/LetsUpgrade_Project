@@ -3,6 +3,9 @@ import { useState } from "react";
 function Product(props) {
     let [a, setPrice] = useState(0);
 
+    
+    let [buyed, setBuyed] = useState(null);
+    
     let productname = props.name;
     let productprice = props.price;
     function plusData() {
@@ -10,15 +13,15 @@ function Product(props) {
     }
     function minusData() {
         if (a > 0) {
-            setPrice(a = a - 1)
+            setPrice(a = a - 1);
         }
         else {
             setPrice(a = 0);
         }
     }
-    function Buy_btn() {
-        setPrice(a = 0)
-        alert("Buying..."+productname+" Price "+productprice);
+    function Buy_btn(event) {
+        setPrice(a = 0);
+        setBuyed("Product Name: "+productedname+" Price: ₹"+productprice);
     }
     return (
         <>
@@ -34,7 +37,7 @@ function Product(props) {
                         <button className='btn' onClick={() => { plusData() }}>+
                         </button>
                     </div>
-                    <button className='btn' onClick={() => { Buy_btn() }}>Buy
+                    <button className='btn' onClick={(event) => { Buy_btn(event) }}>Buy
                     </button>
                 </div>
             </div>
